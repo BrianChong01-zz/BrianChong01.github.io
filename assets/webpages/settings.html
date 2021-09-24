@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../bootstrap-5.0.0-beta2-dist/bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css">
+    <script src="../jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../aos/aos.css" />
     <link rel='shortcut icon' type='image/x-icon' href='../images/favicon.ico' />
-    <script src="../jquery-3.5.1.min.js"></script>
-    <script src="../bootstrap-4.5.2-dist/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
     <script src="../aos/aos.js"></script>
     <title>My Website</title>
 </head>
@@ -49,7 +48,7 @@
     </nav>
 
     <!-- First Container -->
-    <div class="container-fluid bg-2 text-center">
+    <div id="spanBg" class="container-fluid bg-2 text-center">
         <h3 class="margin">NOTICE</h3>
         <p class="contentPara">Work in progress! </p>
     </div>
@@ -212,7 +211,8 @@
         color: white;
     }
 
-    .activeTab a, .activeTab{
+    .activeTab a,
+    .activeTab {
         color: #1abc9c !important;
         font-weight: 400;
     }
@@ -243,6 +243,10 @@
     .container-fluid {
         padding-top: 9rem;
         padding-bottom: 17.5rem;
+    }
+
+    #spanBg {
+        padding-bottom: 40vh;
     }
 
     .margin {
@@ -388,6 +392,10 @@
     #footerBlock {
         padding-top: 3rem;
         padding-bottom: 3rem;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
 
     /* Footer end */
