@@ -11,19 +11,21 @@
     <link rel="stylesheet" href="../aos/aos.css" />
     <link rel='shortcut icon' type='image/x-icon' href='../images/favicon.ico' />
     <script src="../aos/aos.js"></script>
-    <title>My Website</title>
+    <title>Brian's Website</title>
 </head>
 
 <body style="display: none;">
+    <a id="top"></a>
     <div class="loader-wrapper">
         <span class="loader"><span class="loader-inner"></span></span>
     </div>
 
-    <nav id="desktopNav">
+    <nav id="desktopNav" class="sticky-top">
         <ul id="defaultNav">
             <li class="defaultLink"><a href="../../index.html">Home</a></li>
-            <li class="defaultLink activeTab"><a href="about.html">About</a></li>
-            <li class="defaultLink"><a href="settings.html">Settings</a></li>
+            <li class="defaultLink"><a href="../../index.html#aboutMe">About Me</a></li>
+            <li class="defaultLink activeTab"><a href="about.html">My Projects</a></li>
+            <li class="defaultLink"><a href="../../index.html#contactMe">Contact</a></li>
         </ul>
     </nav>
     <nav id="mobileNav" style="display: none;">
@@ -38,139 +40,101 @@
                 <a href="../../index.html">
                     <li>Home</li>
                 </a>
-                <a href="about.html">
-                    <li class="activeTab">About</li>
+                <a href="../../index.html#aboutMe">
+                    <li>About Me</li>
                 </a>
-                <a href="settings.html">
-                    <li>Settings</li>
+                <a href="about.html">
+                    <li class="activeTab">My Projects</li>
+                </a>
+                <a href="../../index.html#contactMe">
+                    <li>Contact</li>
                 </a>
             </ul>
         </div>
     </nav>
 
-    <!-- First Container -->
-    <div class="container-fluid bg-2 text-center">
-        <h3 class="margin">Why Was This Made?</h3>
-        <p class="contentPara">I made this tool to help me make difficult decisions :) </p>
+    <div style="overflow: auto;">
+        <div class="projectPics">
+            <video id="ssOverviewVid" autoplay muted loop src="../videos/ssvid1v2.mp4"></video>
+        </div>
+
+        <div id="ssContent" class="projectContent">
+            <h2>ShareSpace prototype</h2>
+            <p class="contentPara">This was the first real-world project outside of school that I've done. Over a period
+                of six months, I met up with the client
+                and came up with wireframes, together with a sitemap and prototype to address
+                his requirements.</p>
+            <p class="contentPara">The project aims to allow users to rent out their own spaces at home or
+                rent other users' spaces easily through a mobile application. In addition, delivery services are also
+                integrated into the application for users
+                to move their belongings with ease.
+            </p>
+            <p class="contentPara">After working this project, I learnt to apply the design and user interface skills I
+                have acquired in school and
+                understand how to communicate my thoughts in a project more effectively.
+            </p>
+            <button type="button" id="ssLinkBtn" class="btn linkBtn" data-bs-toggle="modal" data-bs-target="#ssModal">
+                <span>Learn more</span></button>
+        </div>
+
+        <div id="sdcVidMobile" class="projectPics" style="display: none;">
+            <video id="sdcOverviewVidMobile" autoplay muted loop src="../videos/sdcCropped.mp4"></video>
+        </div>
+
+        <div id="sdcContent" class="projectContent">
+            <h2>Sentosa Development Corporation Incentive Platform</h2>
+            <p class="contentPara">This was my final-year project in Singapore Polytechnic which aimed to develop an
+                in-house incentive web portal for the staff of Sentosa
+                Development Corporation(SDC)  which satisfies their requirements.
+            </p>
+
+            <p class="contentPara">
+                The web application has multiple user roles, each with different levels of authority. The admin user
+                role can monitor and manage staff accounts while the remaining staff
+                user accounts can play games and issue compliments to one another.
+
+            </p>
+            <button type="button" id="sdcLinkBtn" class="btn linkBtn" data-bs-toggle="modal" data-bs-target="#sdcModal">
+                <span>Learn more</span></button>
+        </div>
+
+        <div id="sdcVid" class="projectPics">
+            <video id="sdcOverviewVid" autoplay muted loop src="../videos/sdcCropped.mp4"></video>
+        </div>
     </div>
-
-    <!-- Second Container -->
-    <div class="container-fluid bg-1 text-center">
-        <h3 class="margin">Who Am I?</h3>
-        <img id="dpImg" data-aos="zoom-in" src="../images/me.png" class="margin" style="display:inline" alt="me"
-            width="350" height="350">
-        <h3 data-aos="zoom-in" id="introPara">I'm Brian, an IT graduate from Singapore Polytechnic</h3>
-    </div>
-
-    <!-- Third Container -->
-    <div class="container-fluid cardCol" id="thirdSection">
-        <h3 class="margin text-center">My Projects</h3><br>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-
-                <div class="card" data-aos="fade-right" data-aos-duration="1000">
-                    <img src="../images/ShareSpace.jpg" class="card-img-top cardImage" alt="Storage App Prototype">
-                    <div class="card-body">
-                        <h5 class="card-title">Storage Application Prototype</h5>
-                        <p class="card-text">I was commissioned to come up with a sitemap, prototype and wireframes for
-                            a mobile
-                            application called ShareSpace.
-                            ShareSpace aims to be a platform to allow people to rent out spaces in their homes with
-                            ease. This project spanned six months and was my first real-world project outside of
-                            school.
-                        </p>
-                        <button type="button" id="ssLinkBtn" class="btn linkBtn" data-bs-toggle="modal"
-                            data-bs-target="#ssModal">
-                            <span>Learn more</span></button>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Completed in Sept 2020</small>
-                    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="ssModal" tabindex="-1" aria-labelledby="ssModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ssModalLabel">ShareSpace Prototype Guide</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="ssModal" tabindex="-1" aria-labelledby="ssModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ssModalLabel">ShareSpace Prototype Guide</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="responsive-google-slides">
-                                <iframe
-                                    src="https://docs.google.com/presentation/d/e/2PACX-1vTU_DyV8WMF_ICqV-6CV6lomdeX3Ekd-at2b6jI4ptcxGzMXYyuJuA_nsMTUBZ7msdyC-Q3jNqMjLMt/embed?start=false&loop=false&delayms=3000"
-                                    allowfullscreen="true" mozallowfullscreen="true"
-                                    webkitallowfullscreen="true"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="300">
-                    <img src="../images/sentosalogo.svg" class="card-img-top cardImage" alt="Sentosa Project">
-                    <div class="card-body">
-                        <h5 class="card-title">Sentosa Development Corporation Incentive Platform</h5>
-                        <p class="card-text">Together with four other teammates,
-                            we were tasked to create a digital incentive platform for Sentosa Development Corporation
-                            for our final-year project in polytechnic.
-                            This platform aims to reward staff based on their performance, play web-based games and
-                            allow adminstrators to
-                            monitor said performance.</p>
-                        <button type="button" id="sdcLinkBtn" class="btn linkBtn" data-bs-toggle="modal"
-                            data-bs-target="#sdcModal">
-                            <span>Learn more</span></button>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Completed in Jul 2020</small>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="sdcModal" tabindex="-1" aria-labelledby="sdcModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="sdcModalLabel">SDC Project</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="responsive-google-slides">
-                                <iframe
-                                    src="https://docs.google.com/presentation/d/e/2PACX-1vS05NXUu9wwFZRK-Gq8dvfa3TNIC34bB0eprHjzXAn9v5sL3Q9sAbW3r5p8Az4F4HmBTEgHSBZPulJ3/embed?start=false&loop=false&delayms=3000"
-                                    allowfullscreen="true" mozallowfullscreen="true"
-                                    webkitallowfullscreen="true"></iframe>
-                            </div>
-                        </div>
+                <div class="modal-body">
+                    <div class="responsive-google-slides">
+                        <iframe
+                            src="https://docs.google.com/presentation/d/e/2PACX-1vTU_DyV8WMF_ICqV-6CV6lomdeX3Ekd-at2b6jI4ptcxGzMXYyuJuA_nsMTUBZ7msdyC-Q3jNqMjLMt/embed?start=false&loop=false&delayms=3000"
+                            allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Fourth Container (Grid) -->
-    <div class="container-fluid text-center">
-        <h3 class="margin">Where To Find Me?</h3><br>
-        <div class="row">
-            <div class="col-sm-4" data-aos="fade-right">
-                <a href="https://github.com/BrianChong01" target="_blank" rel="noopener noreferrer">
-                    <img src="../images/GitHub_Logo_edit.png" id="githubImg" class="img-fluid margin socialImg"
-                        alt="GitHub">
-                </a>
-            </div>
-            <div class="col-sm-4" data-aos="flip-up" data-aos-delay="300">
-                <a href="https://www.linkedin.com/in/brian-chong-267525209/" target="_blank" rel="noopener noreferrer">
-                    <img src="../images/LI-Logo_edit.png" id="linkedinImg" class="img-fluid margin socialImg"
-                        alt="LinkedIn">
-                </a>
-            </div>
-            <div class="col-sm-4" data-aos="fade-left" data-aos-delay="600">
-                <a href="https://myjobstreet.jobstreet.com.sg/resume/preview-resume.php?x=k7qt0rij4oqernn7g1bicg4pm5"
-                    target="_blank" rel="noopener noreferrer">
-                    <img src="../images/jobstreet.png" id="jobstreetImg" class="img-fluid margin socialImg"
-                        alt="JobStreet">
-                </a>
+    <!-- Modal -->
+    <div class="modal fade" id="sdcModal" tabindex="-1" aria-labelledby="sdcModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sdcModalLabel">SDC Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="responsive-google-slides">
+                        <iframe
+                            src="https://docs.google.com/presentation/d/e/2PACX-1vS05NXUu9wwFZRK-Gq8dvfa3TNIC34bB0eprHjzXAn9v5sL3Q9sAbW3r5p8Az4F4HmBTEgHSBZPulJ3/embed?start=false&loop=false&delayms=3000"
+                            allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -194,11 +158,28 @@
             });
         });
 
+        /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("desktopNav").style.top = "0";
+                document.getElementById("menuToggle").style.top = "3rem";
+            } else {
+                document.getElementById("desktopNav").style.top = "-100px";
+                document.getElementById("menuToggle").style.top = "-150px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+
+
         // Media query
         var deviceWidth = window.matchMedia("(max-width: 600px)");
         if (deviceWidth.matches) {
             $("#mobileNav").show();
             $("#desktopNav").hide();
+            $("#sdcVidMobile").show();
+            $("#sdcVid").hide();
         }
     </script>
 </body>
@@ -302,6 +283,11 @@
     }
 
     /* Nav bar start */
+    #desktopNav,
+    #menuToggle {
+        transition: top 0.5s;
+    }
+
     #defaultNav {
         list-style-type: none;
         margin: 0;
@@ -348,73 +334,29 @@
         letter-spacing: 0.05rem;
     }
 
+    #ssOverviewVid {
+        width: 18vw;
+    }
+
+    #sdcOverviewVid {
+        width: 45vw;
+    }
+
     .contentPara {
-        font-size: 1.3rem;
-    }
-
-    .bg-1 {
-        background-color: #474e5d;
-        color: #ffffff;
-    }
-
-    .bg-2 {
-        background-color: #1abc9c;
-        color: #ffffff;
-    }
-
-    .bg-3 {
-        background-color: #2f2f2f;
-        color: #fff;
-    }
-
-    .container-fluid {
-        padding-top: 8rem;
-        padding-bottom: 8rem;
-    }
-
-    .margin {
-        margin-bottom: 4rem;
-    }
-
-    #dpImg {
-        width: 20rem;
-        height: 20rem;
-    }
-
-    .socialImg {
-        width: 18rem;
-        overflow: hidden;
-        transition: transform .5s ease;
-        cursor: pointer;
-    }
-
-    .socialImg:hover {
-        transform: scale(1.3);
-    }
-
-    .cardCol {
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
-    }
-
-    .card-title {
-        font-size: 1.5rem;
-    }
-
-    .cardImage {
-        width: 25rem;
+        font-size: 1rem;
         margin: auto;
-    }
-
-    .card-text {
-        margin-bottom: 2rem;
+        word-wrap: normal;
+        margin-bottom: 1vw;
+        line-height: 1.8rem;
     }
 
     .linkBtn {
-        background-color: #1abc9c;
-        color: white;
+
+        color: #1abc9c;
         transition: 300ms;
         width: 8.2rem;
+        margin-top: 1vw;
+        border: 1px solid #1abc9c;
     }
 
     .linkBtn:hover {
@@ -448,8 +390,36 @@
         right: 0;
     }
 
-    #thirdSection {
-        padding-bottom: 2rem;
+    .projectPics {
+        float: left;
+        width: 40%;
+        text-align: center;
+        padding: 2.5vw 0 2.5vw 0;
+    }
+
+    .projectContent {
+        float: left;
+        width: 60%;
+        padding: 8vw 10vw 5vw 0;
+    }
+
+    #sdcVid {
+        float: left;
+        width: 60%;
+        text-align: center;
+        padding: 5.5vw 2.5vw 15vw 0;
+    }
+
+    #sdcContent {
+        clear: both;
+        float: left;
+        width: 40%;
+        padding: 6vw 0 5vw 5vw;
+    }
+
+    .projectContent h2 {
+        color: #1abc9c;
+        margin-bottom: 1vw;
     }
 
     .responsive-google-slides {
@@ -468,6 +438,11 @@
         left: 0;
         width: 100% !important;
         height: 100% !important;
+    }
+
+    .bg-3 {
+        background-color: #2f2f2f;
+        color: #fff;
     }
 
     /* Content end */
@@ -495,7 +470,7 @@
     /* Made by Erik Terwan 24th of November 2015 */
     #menuToggle {
         display: block;
-        position: absolute;
+        position: fixed;
         top: 3rem;
         left: 2.5rem;
         z-index: 1;
@@ -533,7 +508,7 @@
         height: 4px;
         margin-bottom: 5px;
         position: relative;
-        background: #e7e7e7;
+        background: #1abc9c;
         border-radius: 3px;
         z-index: 1;
         transform-origin: 4px 0px;
@@ -614,38 +589,34 @@
             font-size: 2rem;
         }
 
-        .contentPara {
-            font-size: 1.1rem;
-            padding-left: 3rem;
-            padding-right: 3rem;
-        }
-
-        #introPara {
-            font-size: 1.8rem;
-        }
-
-        #dpImg {
-            height: 250px;
-            width: 250px;
-        }
-
         #footerText {
             font-size: 0.8rem;
         }
 
-        .container-fluid {
-            padding-top: 7rem;
-            padding-bottom: 7rem;
+        .projectPics,
+        .projectContent {
+            width: 100%;
         }
 
-        .margin {
-            margin-bottom: 3rem;
+        #ssOverviewVid {
+            margin-top: 20vw;
+            width: 35vw;
         }
 
-        .cardImage {
-            width: 16rem;
+        #ssContent{
+            padding: 12vw;
         }
 
+        #sdcOverviewVidMobile {
+            width: 100%;
+            padding: 6vw 12vw 6vw 12vw;
+            clear: both;
+        }
+
+        #sdcContent {
+            width: 100%;
+            padding: 2vw 12vw 20vw 12vw;
+        }
     }
 </style>
 
